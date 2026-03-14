@@ -30,15 +30,12 @@
 전체 시스템은 크게 **Cloud DB(데이터 동기화)**, **Mission Controller(관제 및 판단)**, **Isaac Sim(디지털 트윈 제어)** 세 파트로 구성됩니다.
 
 ### 1. 시스템 전체 아키텍처
-![System Architecture](./System%20Architecture.jpg)
 
 ### 2. 전체 공정 플로우 차트 (Simple)
 주문 수신부터 라스트 마일 배송(드론)까지의 전체적인 흐름입니다.
-![Flowchart Simple](./Flowchart_Simple.jpg)
 
 ### 3. 상세 통신 플로우 차트 (SI)
 ROS 2 토픽 통신 및 DB 연동을 포함한 상세 시스템 플로우입니다.
-![Flowchart SI](./Flowchart_SI.jpg)
 
 ---
 
