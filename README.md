@@ -16,7 +16,7 @@
 - **교착 상태 회피:** 타 로봇이 점유한 노드에 동적으로 높은 가중치를 부여하고, 좁은 파레트 구역에서는 후진(Reverse) 기동을 구현하여 로봇 간 충돌 및 병목 현상을 방지합니다.
 
 ### 3. 상태 머신 및 RMPflow 기반 정밀 제어 (Precise Manipulation)
-- **역할 분담:** 2대의 UR10 로봇팔을 적재용(파레트 ➡️ AGV)과 하차용(AGV ➡️ 컨베이어)으로 분리하여 제어합니다.
+- **역할 분담:** 2대의 UR10 로봇팔을 적재용(파레트 -> AGV)과 하차용(AGV -> 컨베이어)으로 분리하여 제어합니다.
 - **궤적 제어:** Isaac Sim의 `RMPflow`를 적용하여 부드러운 모션 궤적을 생성하며, 재고 수량 및 주문 상태에 따라 실시간으로 목표 웨이포인트(Waypoint)가 변하는 정교한 상태 머신(State Machine)을 구현했습니다.
 
 ### 4. 드론 연동 라스트 마일 배송 (Last-mile Drone Delivery)
@@ -110,5 +110,9 @@ ros2 launch eium warehouse_launch.py
 
 ---
 
-## 🔗 Git 주소
+##  Git 주소
 **Repository:** [Rokey6-D2-Isaac-simulation-project](https://github.com/Junyoung-Gwak/Rokey6-D2-Isaac-simulation-project.git)
+
+## 시연 영상
+
+https://drive.google.com/file/d/1lxgGzTihuzBDMSfQV0yoM6j0MNrnNqR5/view?usp=sharing
