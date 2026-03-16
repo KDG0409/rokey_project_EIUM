@@ -1,0 +1,125 @@
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.modal-content {
+  width: 100%;
+  max-width: 1800px;
+  padding: 24px;
+  margin: 0 16px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.modal-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1f2937;
+  margin: 0;
+}
+
+.close-button {
+  padding: 8px 16px;
+  font-weight: bold;
+  color: #4b5563;
+  background-color: #e5e7eb;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.close-button:hover {
+  background-color: #d1d5db;
+}
+
+.table-container {
+  padding-bottom: 16px;
+  overflow-x: auto;
+}
+
+.inventory-table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+  border: 2px solid #4b5563;
+  min-width: max-content;
+}
+
+.inventory-table th {
+  padding: 12px;
+  font-weight: 600;
+  color: #1f2937;
+  background-color: #f3f4f6;
+  border: 2px solid #4b5563;
+  white-space: nowrap;
+}
+
+.inventory-table td {
+  padding: 16px;
+  border: 2px solid #4b5563;
+  background-color: #ffffff; /* 기존의 동적 배경색을 제거하고 흰색으로 고정합니다 */
+  vertical-align: middle;
+}
+
+/* 2x2 형태의 사각형들을 감싸는 부모 그리드 컨테이너 */
+.stock-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 28px);
+  grid-template-rows: repeat(2, 28px);
+  gap: 6px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+/* 각각의 개별 상태 사각형 (기본 모양) */
+.stock-square {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  transition: background-color 0.4s ease; /* 색상이 변할 때 부드럽게 전환되도록 애니메이션 효과 부여 */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 동적으로 적용될 사각형의 색상 클래스 */
+.square-green { background-color: #22c55e; }
+.square-red { background-color: #ef4444; }
+
+.legend-container {
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 24px;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-square {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}

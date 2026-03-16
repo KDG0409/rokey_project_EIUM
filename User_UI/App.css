@@ -1,0 +1,214 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html, #root {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.app-container {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-top: env(safe-area-inset-top);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 4%;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: env(safe-area-inset-top); 
+  z-index: 1000;
+  gap: 10px;
+}
+
+.main-content {
+  padding: 20px 4%;
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding-top: env(safe-area-inset-top);
+
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.cart-modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(480px, 100%);
+  height: 100%;
+  background: #fff;
+  z-index: 2000;
+  padding: calc(20px + env(safe-area-inset-top)) 20px 20px 20px;
+  box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+
+.auth-modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  width: min(400px, 90%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.auth-modal input {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.qty-btn {
+  padding: 5px 12px;
+  border: 1px solid #ddd;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.order-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2500;
+}
+
+.order-modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  width: min(600px, 95%);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-list-container {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 15px;
+}
+
+.order-item-card {
+  background: #f1f8ff;
+  border: 1px solid #d0e7ff;
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-status-badge {
+  background: #0073e9;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 10px 3%;
+  }
+
+  .header div:first-child {
+    font-size: 1.4rem !important;
+  }
+
+  .header button {
+    padding: 6px 10px !important;
+    font-size: 0.8rem !important;
+  }
+
+  .product-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .product-card {
+    padding: 10px;
+  }
+
+  .product-image {
+    height: 140px;
+    margin-bottom: 8px;
+  }
+
+  .product-card h4 {
+    font-size: 0.9rem;
+    height: 2.4em;
+    overflow: hidden;
+  }
+
+  .product-card p {
+    font-size: 0.85rem;
+  }
+
+  .cart-modal {
+    padding: 15px;
+  }
+}
